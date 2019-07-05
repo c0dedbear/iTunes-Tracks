@@ -19,10 +19,12 @@ struct Track: Codable {
     let collectionName: String?
     let audioURL: String? // url for sample file
     let imageURL: String? // picture of album
+    let trackViewUrl: String?
     
     enum CodingKeys: String, CodingKey {
         case artistName, trackName, collectionName
         case audioURL = "previewUrl"
         case imageURL = "artworkUrl100"
+        case trackViewUrl
     }
 }

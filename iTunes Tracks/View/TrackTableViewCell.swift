@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SafariServices
 
 class TrackTableViewCell: UITableViewCell {
     
@@ -19,15 +20,16 @@ class TrackTableViewCell: UITableViewCell {
     @IBOutlet weak var playPauseButton: UIButton!
     
     var player: AudioPlayer!
+    
     let playButtonImage = UIImage(named: "playbutton")
     let pauseButtonImage = UIImage(named: "pausebutton")
     
     func configure(using track: Track?, withImage urlString: String?) {
-        
         SearchResultsNetworkManager.shared.fetchImage(from: urlString) { image in
             if let image = image {
                 OperationQueue.main.addOperation {
                     self.albumImageView.image = image
+                    
                 }
             }
         }
@@ -36,29 +38,36 @@ class TrackTableViewCell: UITableViewCell {
         artistLabel.text = track?.artistName ?? ""
         albumLabel.text = track?.collectionName ?? ""
         
-        //audio playback
-        trackSlider.setThumbImage(UIImage(named: "thumb"), for: .normal)
+        
+        trackSlider.setThumbImage(UIImage(named: "clearthumb"), for: .normal)
         trackSlider.setThumbImage(UIImage(named: "thumb"), for: .highlighted)
         
-        if let url = track?.audioURL {
-            let playerItem = AudioPlayer.configureItem(with: url)
+        if let audioUrl = track?.audioURL, let trackUrl = track?.trackViewUrl  {
+            let playerItem = AudioPlayer.getPlayerItem(with: audioUrl)
             player = AudioPlayer(playerItem: playerItem)
+            listenOnAplleMusicURL = URL(string: trackUrl)
         }
+        
+        
         
     }
     
     func updateTrackSlider() {
         guard let player = player else { return }
         guard let currentItem = player.currentItem else { return }
-        let interval = CMTime(seconds: 0.5, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+        guard currentItem.status.rawValue == AVPlayerItem.Status.readyToPlay.rawValue else { return }
+        let durationSeconds = Float(currentItem.duration.seconds)
+        trackSlider.maximumValue = durationSeconds
+        let interval = CMTime(seconds: 0.1, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
         player.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main) { [weak self] time in
-            self?.trackSlider.maximumValue = Float(currentItem.duration.seconds)
             self?.trackSlider.value = Float(time.seconds)
-            if time == player.currentItem?.duration || self?.playPauseButton.image(for: .normal) == self?.playButtonImage {
+            if time == currentItem.duration {
                 player.seek(to: CMTimeMake(value: 0, timescale: 1))
                 player.pause()
                 self?.playPauseButton.setImage(self?.playButtonImage, for: .normal)
-                // player.removeTimeObserver(player)
+                UIView.animate(withDuration: 0.5) {
+                    self?.trackSlider.alpha = 0
+                }
             }
             
         }
@@ -67,10 +76,19 @@ class TrackTableViewCell: UITableViewCell {
         
     }
     
+    @IBAction func trackSliderValueChanged(_ sender: UISlider) {
+        guard let player = player else { return }
+        guard let currentItem = player.currentItem else { return }
+        guard currentItem.status.rawValue == AVPlayerItem.Status.readyToPlay.rawValue else { return }
+        player.seekTrack(using: sender)
+    }
     @IBAction func playPauseButtonPressed(_ sender: UIButton) {
-        guard let player = player else {
-            print("player not installed")
-            return }
+        guard let player = player else { return }
+        guard let currentItem = player.currentItem else { return }
+        guard currentItem.status.rawValue == AVPlayerItem.Status.readyToPlay.rawValue else { return }
+        UIView.animate(withDuration: 0.25) {
+            sender.alpha = 1
+        }
         sender.setImage(player.isPlaying ? playButtonImage : pauseButtonImage , for: .normal)
         if player.isPlaying {
             player.pause()
@@ -78,8 +96,8 @@ class TrackTableViewCell: UITableViewCell {
                 self.trackSlider.alpha = 0
             }
         } else {
-            // updateTrackSlider()
             player.play()
+            updateTrackSlider()
             UIView.animate(withDuration: 0.5) {
                 self.trackSlider.alpha = 1
             }
@@ -87,6 +105,5 @@ class TrackTableViewCell: UITableViewCell {
         
     }
     
+    
 }
-
-

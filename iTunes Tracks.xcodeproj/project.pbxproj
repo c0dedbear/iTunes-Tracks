@@ -20,6 +20,7 @@
 		B3A1A95422CE34DD006D690E /* NavigationBarVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A1A95322CE34DD006D690E /* NavigationBarVisibility.swift */; };
 		B3A1A95622CE4C69006D690E /* UITableView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A1A95522CE4C69006D690E /* UITableView + Extension.swift */; };
 		B3A1A95A22CE58CF006D690E /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A1A95922CE58CE006D690E /* AudioPlayer.swift */; };
+		B3DBCB6C22CF89C000F3FD87 /* UIButton + IndexPath Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DBCB6B22CF89C000F3FD87 /* UIButton + IndexPath Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		B3A1A95322CE34DD006D690E /* NavigationBarVisibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarVisibility.swift; sourceTree = "<group>"; };
 		B3A1A95522CE4C69006D690E /* UITableView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + Extension.swift"; sourceTree = "<group>"; };
 		B3A1A95922CE58CE006D690E /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioPlayer.swift; path = "../View Controllers/TrackListTableViewController/AudioPlayer.swift"; sourceTree = "<group>"; };
+		B3DBCB6B22CF89C000F3FD87 /* UIButton + IndexPath Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + IndexPath Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				B3A1A94322CE0576006D690E /* URL + Extention.swift */,
+				B3DBCB6B22CF89C000F3FD87 /* UIButton + IndexPath Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				B3A1A94722CE0576006D690E /* URL + Extention.swift in Sources */,
 				B3A1A94622CE0576006D690E /* SearchResultsNetworkManager.swift in Sources */,
 				B3A1A95422CE34DD006D690E /* NavigationBarVisibility.swift in Sources */,
+				B3DBCB6C22CF89C000F3FD87 /* UIButton + IndexPath Extension.swift in Sources */,
 				B3A1A92722CE04F7006D690E /* AppDelegate.swift in Sources */,
 				B3A1A94822CE0576006D690E /* ItunesSearchResults.swift in Sources */,
 				B3A1A95A22CE58CF006D690E /* AudioPlayer.swift in Sources */,

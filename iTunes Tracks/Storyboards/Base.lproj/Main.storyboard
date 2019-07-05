@@ -14,18 +14,14 @@
             <objects>
                 <tableViewController id="yPu-es-ae8" customClass="TrackListTableViewController" customModule="iTunes_Tracks" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LqU-Uc-vyV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" text="" placeholder="search" translucent="NO" id="TKo-Sb-q99">
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="" placeholder="search" translucent="NO" id="TKo-Sb-q99">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardAppearance="alert" returnKeyType="done"/>
-                            <scopeButtonTitles>
-                                <string>Title</string>
-                                <string>Title</string>
-                            </scopeButtonTitles>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TrackCell" rowHeight="100" id="xXS-BG-j7r" customClass="TrackTableViewCell" customModule="iTunes_Tracks" customModuleProvider="target">
@@ -35,7 +31,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cRw-6p-gtB">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="cRw-6p-gtB">
                                             <rect key="frame" x="8" y="0.0" width="100" height="100"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="100" id="oPc-GQ-6sU"/>
@@ -47,41 +43,59 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="G2a-T2-deB">
-                                            <rect key="frame" x="116" y="0.5" width="290" height="99"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="G2a-T2-deB">
+                                            <rect key="frame" x="116" y="11" width="278" height="74"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="oKT-Oh-9uL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="290" height="61"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="oKT-Oh-9uL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="278" height="47.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRO-hY-tfF">
-                                                            <rect key="frame" x="0.0" y="0.0" width="290" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwr-tW-Gg7">
-                                                            <rect key="frame" x="0.0" y="24.5" width="290" height="18"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Album" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opd-vd-vs9">
-                                                            <rect key="frame" x="0.0" y="46.5" width="290" height="14.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u2T-jo-mxG">
+                                                            <rect key="frame" x="0.0" y="0.0" width="238" height="47.5"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRO-hY-tfF">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="238" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Artist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwr-tW-Gg7">
+                                                                    <rect key="frame" x="0.0" y="20.5" width="238" height="18"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="Album" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opd-vd-vs9">
+                                                                    <rect key="frame" x="0.0" y="38.5" width="238" height="9"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cyy-CZ-6FQ">
+                                                            <rect key="frame" x="238" y="0.0" width="40" height="47.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="40" id="hHe-ke-DlI"/>
+                                                            </constraints>
+                                                            <state key="normal" image="listenOnAM"/>
+                                                            <connections>
+                                                                <action selector="listenOnAppleMusicButtonPressed:" destination="yPu-es-ae8" eventType="touchUpInside" id="BVR-if-jw8"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                 </stackView>
-                                                <slider opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="J9Y-8P-yrd">
-                                                    <rect key="frame" x="-2" y="69" width="294" height="31"/>
+                                                <slider opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="J9Y-8P-yrd">
+                                                    <rect key="frame" x="-2" y="47.5" width="282" height="27.5"/>
                                                     <color key="minimumTrackTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="maximumTrackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <connections>
+                                                        <action selector="trackSliderValueChanged:" destination="xXS-BG-j7r" eventType="valueChanged" id="5YF-If-VpU"/>
+                                                    </connections>
                                                 </slider>
                                             </subviews>
                                         </stackView>
-                                        <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrb-N5-gNr">
+                                        <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrb-N5-gNr">
                                             <rect key="frame" x="33" y="25" width="50" height="50"/>
                                             <state key="normal" image="playbutton"/>
                                             <connections>
@@ -91,13 +105,14 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="mrb-N5-gNr" firstAttribute="centerX" secondItem="cRw-6p-gtB" secondAttribute="centerX" id="26z-ex-bhc"/>
-                                        <constraint firstItem="G2a-T2-deB" firstAttribute="centerY" secondItem="494-65-XRc" secondAttribute="centerY" id="ReQ-Qp-Jce"/>
-                                        <constraint firstAttribute="trailing" secondItem="G2a-T2-deB" secondAttribute="trailing" constant="8" id="Rgr-lO-jQt"/>
                                         <constraint firstItem="cRw-6p-gtB" firstAttribute="leading" secondItem="494-65-XRc" secondAttribute="leading" constant="8" id="WbB-O6-CCx"/>
-                                        <constraint firstItem="G2a-T2-deB" firstAttribute="leading" secondItem="cRw-6p-gtB" secondAttribute="trailing" constant="8" id="XkN-88-05C"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="G2a-T2-deB" secondAttribute="bottom" constant="4" id="hkh-gZ-f1p"/>
+                                        <constraint firstItem="G2a-T2-deB" firstAttribute="leading" secondItem="cRw-6p-gtB" secondAttribute="trailing" constant="8" id="ioV-hN-6cQ"/>
                                         <constraint firstItem="mrb-N5-gNr" firstAttribute="width" secondItem="cRw-6p-gtB" secondAttribute="width" multiplier="0.5" id="kEb-ab-a9u"/>
                                         <constraint firstItem="mrb-N5-gNr" firstAttribute="centerY" secondItem="cRw-6p-gtB" secondAttribute="centerY" id="n7w-MS-OnM"/>
                                         <constraint firstItem="mrb-N5-gNr" firstAttribute="height" secondItem="cRw-6p-gtB" secondAttribute="height" multiplier="0.5" id="v9q-Fw-Ze1"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="G2a-T2-deB" secondAttribute="trailing" id="vY5-q5-a0w"/>
+                                        <constraint firstItem="G2a-T2-deB" firstAttribute="top" secondItem="494-65-XRc" secondAttribute="topMargin" id="yWa-WD-gpn"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -146,6 +161,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="listenOnAM" width="40" height="40"/>
         <image name="playbutton" width="256" height="256"/>
     </resources>
 </document>

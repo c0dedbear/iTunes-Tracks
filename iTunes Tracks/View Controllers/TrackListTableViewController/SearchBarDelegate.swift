@@ -8,6 +8,7 @@
 
 import UIKit
 
+// MARK: - UISearchBarDelegate
 extension TrackListTableViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -19,22 +20,11 @@ extension TrackListTableViewController: UISearchBarDelegate {
         if !searchText.isEmpty{
             SearchResultsNetworkManager.shared.parameters["term"] = searchBar.text
             fetchSearchResults()
-            stopPlaying()
         }
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         guard let _ = searchBar.text else { return }
-    }
-
-    
-    func stopPlaying() {
-        for cell in tableView.visibleCells {
-            let visibleCell = cell as! TrackTableViewCell
-            if visibleCell.player.isPlaying {
-                visibleCell.playPauseButtonPressed(visibleCell.playPauseButton)
-            }
-        }
     }
     
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class TrackListTableViewController: UITableViewController {
     
@@ -19,6 +20,23 @@ class TrackListTableViewController: UITableViewController {
         searchBar.delegate = self
     }
     
+    @IBAction func listenOnAppleMusicButtonPressed(_ sender: UIButton) {
+        //define indexPath using sender position
+        let buttonPostion = sender.convert(sender.bounds.origin, to: tableView)
+        if let indexPath = tableView.indexPathForRow(at: buttonPostion) {
+            let rowIndex =  indexPath.row
+            print(rowIndex)
+            guard let track = searchResults?.results?[rowIndex] else { return }
+            guard let url = URL(string: track.trackViewUrl!) else { return }
+            openSafari(with: url)
+
+        }
+
+
+        
+    
+    }
+    
 }
 
 // MARK: - Table view data source
@@ -26,9 +44,9 @@ extension TrackListTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let resultCount = searchResults?.results?.count {
-                return resultCount
+            return resultCount
         } else {
-             tableView.setEmptyView(title: "", message: "There will be shown searching tracks")
+            tableView.setEmptyView(title: "", message: "There will be shown searching tracks")
             return 0
         }
     }
@@ -48,16 +66,25 @@ extension TrackListTableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
-
-        override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-            let cell = cell as! TrackTableViewCell
-                cell.playPauseButton.setImage(cell.playButtonImage, for: .normal)
-                cell.trackSlider.alpha = 0
-                cell.player.pause()
-               // cell.updateTrackSlider()
-
-        }
+    
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let cell = cell as! TrackTableViewCell
+        cell.playPauseButton.setImage(cell.playButtonImage, for: .normal)
+        cell.trackSlider.alpha = 0
+        cell.player.pause()
+    }
+    
 }
+
+
+// MARK: - UIScrollView Delegate
+extension TrackListTableViewController {
+    
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        navigationBarVisibilityToggle()
+    }
+}
+
 
 // MARK: - Fetching Results
 extension TrackListTableViewController {
@@ -70,6 +97,17 @@ extension TrackListTableViewController {
             }
         }
     }
+}
+
+// MARK: - Open track in Apple Music
+extension TrackListTableViewController {
+    private func openSafari(with url: URL) {
+        let configuration = SFSafariViewController.Configuration()
+        configuration.barCollapsingEnabled = true
+        let safariController = SFSafariViewController(url: url, configuration: configuration)
+        present(safariController, animated: true)
+    }
+
 }
 
 // MARK: - Keyboard
