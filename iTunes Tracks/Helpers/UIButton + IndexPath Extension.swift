@@ -8,9 +8,10 @@
 
 import UIKit
 
-extension UIButton {
-    var indexPath: NSIndexPath {
-        return NSIndexPath()
-    }
-    
-}
+//Unused
+//extension UIButton {
+//    var indexPath: NSIndexPath {
+//        return NSIndexPath()
+//    }
+//
+//}
