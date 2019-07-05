@@ -8,20 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		B3A1A92722CE04F7006D690E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A1A92622CE04F7006D690E /* AppDelegate.swift */; };
-		B3A1A92922CE04F7006D690E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A1A92822CE04F7006D690E /* ViewController.swift */; };
 		B3A1A92C22CE04F7006D690E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A1A92A22CE04F7006D690E /* Main.storyboard */; };
 		B3A1A92E22CE04F8006D690E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3A1A92D22CE04F8006D690E /* Assets.xcassets */; };
 		B3A1A93122CE04F9006D690E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A1A92F22CE04F9006D690E /* LaunchScreen.storyboard */; };
+		B3A1A94622CE0576006D690E /* SearchResultsNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A1A94122CE0575006D690E /* SearchResultsNetworkManager.swift */; };
+		B3A1A94722CE0576006D690E /* URL + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A1A94322CE0576006D690E /* URL + Extention.swift */; };
+		B3A1A94822CE0576006D690E /* ItunesSearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A1A94522CE0576006D690E /* ItunesSearchResults.swift */; };
+		B3A1A94B22CE0670006D690E /* TrackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A1A94A22CE0670006D690E /* TrackTableViewCell.swift */; };
+		B3A1A94D22CE1031006D690E /* TrackListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A1A94C22CE1031006D690E /* TrackListTableViewController.swift */; };
+		B3A1A95222CE117F006D690E /* SearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A1A95122CE117F006D690E /* SearchBarDelegate.swift */; };
+		B3A1A95422CE34DD006D690E /* NavigationBarVisibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A1A95322CE34DD006D690E /* NavigationBarVisibility.swift */; };
+		B3A1A95622CE4C69006D690E /* UITableView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A1A95522CE4C69006D690E /* UITableView + Extension.swift */; };
+		B3A1A95A22CE58CF006D690E /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A1A95922CE58CE006D690E /* AudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B3A1A92322CE04F7006D690E /* iTunes Tracks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Tracks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A1A92622CE04F7006D690E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B3A1A92822CE04F7006D690E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B3A1A92B22CE04F7006D690E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3A1A92D22CE04F8006D690E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3A1A93022CE04F9006D690E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3A1A93222CE04F9006D690E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3A1A94122CE0575006D690E /* SearchResultsNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsNetworkManager.swift; sourceTree = "<group>"; };
+		B3A1A94322CE0576006D690E /* URL + Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL + Extention.swift"; sourceTree = "<group>"; };
+		B3A1A94522CE0576006D690E /* ItunesSearchResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItunesSearchResults.swift; sourceTree = "<group>"; };
+		B3A1A94A22CE0670006D690E /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
+		B3A1A94C22CE1031006D690E /* TrackListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListTableViewController.swift; sourceTree = "<group>"; };
+		B3A1A95122CE117F006D690E /* SearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarDelegate.swift; sourceTree = "<group>"; };
+		B3A1A95322CE34DD006D690E /* NavigationBarVisibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarVisibility.swift; sourceTree = "<group>"; };
+		B3A1A95522CE4C69006D690E /* UITableView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + Extension.swift"; sourceTree = "<group>"; };
+		B3A1A95922CE58CE006D690E /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioPlayer.swift; path = "../View Controllers/TrackListTableViewController/AudioPlayer.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +70,94 @@
 		B3A1A92522CE04F7006D690E /* iTunes Tracks */ = {
 			isa = PBXGroup;
 			children = (
-				B3A1A92622CE04F7006D690E /* AppDelegate.swift */,
-				B3A1A92822CE04F7006D690E /* ViewController.swift */,
-				B3A1A92A22CE04F7006D690E /* Main.storyboard */,
-				B3A1A92D22CE04F8006D690E /* Assets.xcassets */,
-				B3A1A92F22CE04F9006D690E /* LaunchScreen.storyboard */,
-				B3A1A93222CE04F9006D690E /* Info.plist */,
+				B3A1A93E22CE054E006D690E /* App */,
+				B3A1A94222CE0576006D690E /* Helpers */,
+				B3A1A94422CE0576006D690E /* Model */,
+				B3A1A94022CE0575006D690E /* Managers */,
+				B3A1A93F22CE0559006D690E /* Storyboards */,
+				B3A1A94F22CE108D006D690E /* View */,
+				B3A1A94E22CE1082006D690E /* View Controllers */,
+				B3A1A94922CE0580006D690E /* Resources */,
 			);
 			path = "iTunes Tracks";
+			sourceTree = "<group>";
+		};
+		B3A1A93E22CE054E006D690E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B3A1A92622CE04F7006D690E /* AppDelegate.swift */,
+				B3A1A93222CE04F9006D690E /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B3A1A93F22CE0559006D690E /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B3A1A92A22CE04F7006D690E /* Main.storyboard */,
+				B3A1A92F22CE04F9006D690E /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		B3A1A94022CE0575006D690E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B3A1A94122CE0575006D690E /* SearchResultsNetworkManager.swift */,
+				B3A1A95922CE58CE006D690E /* AudioPlayer.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		B3A1A94222CE0576006D690E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B3A1A94322CE0576006D690E /* URL + Extention.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B3A1A94422CE0576006D690E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B3A1A94522CE0576006D690E /* ItunesSearchResults.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B3A1A94922CE0580006D690E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B3A1A92D22CE04F8006D690E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B3A1A94E22CE1082006D690E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3A1A95022CE116F006D690E /* TrackListTableViewController */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B3A1A94F22CE108D006D690E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3A1A94A22CE0670006D690E /* TrackTableViewCell.swift */,
+				B3A1A95522CE4C69006D690E /* UITableView + Extension.swift */,
+				B3A1A95322CE34DD006D690E /* NavigationBarVisibility.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3A1A95022CE116F006D690E /* TrackListTableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B3A1A94C22CE1031006D690E /* TrackListTableViewController.swift */,
+				B3A1A95122CE117F006D690E /* SearchBarDelegate.swift */,
+			);
+			path = TrackListTableViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +231,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3A1A92922CE04F7006D690E /* ViewController.swift in Sources */,
+				B3A1A94B22CE0670006D690E /* TrackTableViewCell.swift in Sources */,
+				B3A1A95622CE4C69006D690E /* UITableView + Extension.swift in Sources */,
+				B3A1A94722CE0576006D690E /* URL + Extention.swift in Sources */,
+				B3A1A94622CE0576006D690E /* SearchResultsNetworkManager.swift in Sources */,
+				B3A1A95422CE34DD006D690E /* NavigationBarVisibility.swift in Sources */,
 				B3A1A92722CE04F7006D690E /* AppDelegate.swift in Sources */,
+				B3A1A94822CE0576006D690E /* ItunesSearchResults.swift in Sources */,
+				B3A1A95A22CE58CF006D690E /* AudioPlayer.swift in Sources */,
+				B3A1A95222CE117F006D690E /* SearchBarDelegate.swift in Sources */,
+				B3A1A94D22CE1031006D690E /* TrackListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +388,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4UC9B8S3E;
-				INFOPLIST_FILE = "iTunes Tracks/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iTunes Tracks/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,7 +396,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "medvedev.ma.iTunes-Tracks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,7 +406,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4UC9B8S3E;
-				INFOPLIST_FILE = "iTunes Tracks/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/iTunes Tracks/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +414,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "medvedev.ma.iTunes-Tracks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
