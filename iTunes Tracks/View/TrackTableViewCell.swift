@@ -42,10 +42,10 @@ class TrackTableViewCell: UITableViewCell {
         trackSlider.setThumbImage(UIImage(named: "clearthumb"), for: .normal)
         trackSlider.setThumbImage(UIImage(named: "thumb"), for: .highlighted)
         
-        if let audioUrl = track?.audioURL, let trackUrl = track?.trackViewUrl  {
+        if let audioUrl = track?.audioURL {
             let playerItem = AudioPlayer.getPlayerItem(with: audioUrl)
             player = AudioPlayer(playerItem: playerItem)
-            listenOnAplleMusicURL = URL(string: trackUrl)
+
         }
         
         
