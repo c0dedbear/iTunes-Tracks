@@ -10,8 +10,8 @@ import UIKit
 
 class CellManager {
     
-    func configure(_ cell: TrackTableViewCell, using track: Track?, withImage urlString: String?) {
-        SearchResultsNetworkManager.shared.fetchImage(from: urlString) { image in
+    func configure(_ cell: TrackTableViewCell, using track: Track?, withImage url: URL?) {
+        SearchResultsNetworkManager.shared.fetchImage(from: url) { image in
             if let image = image {
                 OperationQueue.main.addOperation {
                     cell.albumImageView.image = image

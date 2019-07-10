@@ -36,8 +36,8 @@ class SearchResultsNetworkManager {
         }.resume()
     }
     
-    func fetchImage(from url: String?, completion: @escaping (UIImage?) -> Void) {
-        guard let imageUrl = URL(string: url!) else {
+    func fetchImage(from url: URL?, completion: @escaping (UIImage?) -> Void) {
+        guard let imageUrl = url else {
             print("Invalid URL of Image")
             return }
         URLSession.shared.dataTask(with: imageUrl) { (data, _, _) in

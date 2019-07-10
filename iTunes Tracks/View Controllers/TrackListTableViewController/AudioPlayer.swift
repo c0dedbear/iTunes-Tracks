@@ -11,9 +11,8 @@ import AVFoundation
 
 class AudioPlayer: AVPlayer {
     
-    static func getPlayerItem(with urlString: String?) -> AVPlayerItem? {
-        guard let urlString = urlString else { return nil }
-        guard let url = URL(string: urlString) else { return nil }
+    static func getPlayerItem(with url: URL?) -> AVPlayerItem? {
+        guard let url = url else { return nil }
         let item = AVPlayerItem(url: url)
         return item
     }

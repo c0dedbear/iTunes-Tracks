@@ -17,9 +17,9 @@ struct Track: Codable {
     let artistName: String?
     let trackName: String?
     let collectionName: String?
-    let audioURL: String? // url for sample file
-    let imageURL: String? // picture of album
-    let trackViewUrl: String?
+    let audioURL: URL? // url for sample file
+    let imageURL: URL? // picture of album
+    let trackViewUrl: URL?
     
     enum CodingKeys: String, CodingKey {
         case artistName, trackName, collectionName

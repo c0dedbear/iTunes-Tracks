@@ -28,7 +28,7 @@ class TrackListTableViewController: UITableViewController {
             let rowIndex =  indexPath.row
             print(rowIndex)
             guard let track = searchResults?.results?[rowIndex] else { return }
-            guard let url = URL(string: track.trackViewUrl!) else { return }
+            guard let url = track.trackViewUrl else { return }
             openSafari(with: url)
 
         }
