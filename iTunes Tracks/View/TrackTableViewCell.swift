@@ -18,39 +18,12 @@ class TrackTableViewCell: UITableViewCell {
     @IBOutlet weak var albumLabel: UILabel!
     @IBOutlet weak var trackSlider: UISlider!
     @IBOutlet weak var playPauseButton: UIButton!
+    @IBOutlet weak var listenOnAppleMusicButton: UIButton!
     
     var player: AudioPlayer!
     
     let playButtonImage = UIImage(named: "playbutton")
     let pauseButtonImage = UIImage(named: "pausebutton")
-    
-    func configure(using track: Track?, withImage urlString: String?) {
-        SearchResultsNetworkManager.shared.fetchImage(from: urlString) { image in
-            if let image = image {
-                OperationQueue.main.addOperation {
-                    self.albumImageView.image = image
-                    
-                }
-            }
-        }
-        
-        trackNameLabel.text = track?.trackName ?? ""
-        artistLabel.text = track?.artistName ?? ""
-        albumLabel.text = track?.collectionName ?? ""
-        
-        
-        trackSlider.setThumbImage(UIImage(named: "clearthumb"), for: .normal)
-        trackSlider.setThumbImage(UIImage(named: "thumb"), for: .highlighted)
-        
-        if let audioUrl = track?.audioURL {
-            let playerItem = AudioPlayer.getPlayerItem(with: audioUrl)
-            player = AudioPlayer(playerItem: playerItem)
-
-        }
-        
-        
-        
-    }
     
     func updateTrackSlider() {
         guard let player = player else { return }
@@ -68,10 +41,17 @@ class TrackTableViewCell: UITableViewCell {
                 UIView.animate(withDuration: 0.5) {
                     self?.trackSlider.alpha = 0
                 }
+                
+                UIView.animate(withDuration: 0.75, animations: {
+                    self?.listenOnAppleMusicButton.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+                }, completion: { completion in
+                    if completion {
+                        self?.listenOnAppleMusicButton.transform = CGAffineTransform.identity
+                    }
+                }
+                )
             }
-            
         }
-        
         
         
     }
@@ -82,6 +62,7 @@ class TrackTableViewCell: UITableViewCell {
         guard currentItem.status.rawValue == AVPlayerItem.Status.readyToPlay.rawValue else { return }
         player.seekTrack(using: sender)
     }
+    
     @IBAction func playPauseButtonPressed(_ sender: UIButton) {
         guard let player = player else { return }
         guard let currentItem = player.currentItem else { return }

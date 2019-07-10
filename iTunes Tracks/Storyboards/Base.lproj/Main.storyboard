@@ -14,10 +14,10 @@
             <objects>
                 <tableViewController id="yPu-es-ae8" customClass="TrackListTableViewController" customModule="iTunes_Tracks" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LqU-Uc-vyV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" text="" placeholder="search" translucent="NO" id="TKo-Sb-q99">
+                        <searchBar key="tableHeaderView" contentMode="redraw" misplaced="YES" text="" placeholder="search" translucent="NO" id="TKo-Sb-q99">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,6 +123,7 @@
                                     <outlet property="albumImageView" destination="cRw-6p-gtB" id="KKL-Oe-UH5"/>
                                     <outlet property="albumLabel" destination="Opd-vd-vs9" id="JGN-Mx-l12"/>
                                     <outlet property="artistLabel" destination="cwr-tW-Gg7" id="OMY-eN-sgI"/>
+                                    <outlet property="listenOnAppleMusicButton" destination="Cyy-CZ-6FQ" id="5ip-1C-h48"/>
                                     <outlet property="playPauseButton" destination="mrb-N5-gNr" id="xws-Sz-cIX"/>
                                     <outlet property="trackNameLabel" destination="TRO-hY-tfF" id="HAD-QE-DqN"/>
                                     <outlet property="trackSlider" destination="J9Y-8P-yrd" id="PRY-cz-OyF"/>

@@ -11,6 +11,7 @@ import SafariServices
 
 class TrackListTableViewController: UITableViewController {
     
+    let cellManager = CellManager()
     var searchResults: ItunesSearchResults?
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -31,9 +32,6 @@ class TrackListTableViewController: UITableViewController {
             openSafari(with: url)
 
         }
-
-
-        
     
     }
     
@@ -54,7 +52,7 @@ extension TrackListTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TrackCell", for: indexPath) as! TrackTableViewCell
         let track = searchResults?.results?[indexPath.row]
-        cell.configure(using: track, withImage: track?.imageURL)
+        cellManager.configure(cell, using: track, withImage: track?.imageURL)
         return cell
     }
     
